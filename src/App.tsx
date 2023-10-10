@@ -7,8 +7,6 @@ import {TvShow} from "./models/TvShow";
 import {TVShowDetail} from "./components/TvShowDetail/TVShowDetail";
 import {Logo} from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png"
-import {TvShowListItem} from "./components/TvShowListItem/TvShowListItem";
-import {log} from "util";
 import {TvShowList} from "./components/TvShowList/TvShowList";
 import {SearchBar} from "./components/SearchBar/SearchBar";
 
@@ -38,7 +36,7 @@ export function App() {
 
     useEffect(() => {
         if( currentTVShow){
-            fetchRecommendations(currentTVShow.id).then(r => console.log('OK'));
+            fetchRecommendations(currentTVShow.id);
         }
     }, [currentTVShow]);
 
@@ -61,7 +59,7 @@ export function App() {
             <div className={s.header}>
                 <div className="row">
                     <div className="col-4">
-                        <Logo image={logo} title="Ben Watch" subtitle="Find a show you may like"/>
+                        <Logo image={logo} title="BENWATCH" subtitle="Find a show you may like"/>
                     </div>
                     <div className="col-sm-12 col-md-4">
                         <SearchBar onSubmit={searchTvShow} />
